@@ -1,8 +1,8 @@
-<?php 
-    $db_server = "localhost";
-	$db_uname = "root";
-	$db_pass = "";
-	$db_name = "labassigment";
+<?php
+	$db_server="localhost";
+	$db_uname="root";
+	$db_pass="";
+	$db_name="assignment";
 	
 	function execute($query){
 		global $db_server, $db_uname, $db_pass, $db_name;
@@ -27,4 +27,5 @@
 		}
 		return $data;
 	}
+	
 ?>

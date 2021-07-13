@@ -11,7 +11,7 @@
 	$err_db="";
 	$hasError = false;
 
-    if(isset($_POST["signUp"])){
+    if(isset($_POST["signup"])){
 		if(empty($_POST["name"])){
 		    $err_name = "Name Requird";
 			$hasError = true;

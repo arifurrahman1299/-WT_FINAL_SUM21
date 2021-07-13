@@ -30,8 +30,7 @@
 			}
 			$err_db = $rs;
 		}
-		}
-	
+	}
 	
 	
 	function insertCategory($cname){
