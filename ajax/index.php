@@ -6,7 +6,7 @@
    }
    function loadDoc(){
 	   var xhr = new XMLHttpRequest();
-	   xhr.open("GET", "pro.php", true);
+	   xhr.open("GET", "ajax.php", true);
 	   xhr.onreadystatechange = function(){
 		   if(this.readystate == 4 && this.ststus == 200){
 			   get("demo").innerHTML = this.responseText;
