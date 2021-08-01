@@ -1,57 +1,26 @@
-<?php include 'MainHeader.php'; ?>
-<?php include 'AdminHeader.php'; ?>
-<?php include '../Controllers/StudentControll.php'; ?>
-<?php
-    $id = $_GET["id"]; 
-    $s = getStudent($id); 
-	$depts = getDepts();
+<?php include 'Controllers/CategoryController.php';
+	$id = $_GET["id"];
+	$c = getCategory($id);
 ?>
-<html>
-    <head></head>
-	<boady>
-	    <div align="center">
-		    <h3>Edit Student</h3>
-			<h5><?php echo $err_db; ?></h5>
-			<form action="" method="post">
-			    <div>
-				    <h4>Student Name</h4>
-					<input type = "text" name = "name" value="<?php echo $s["name"];?>"/>
-					<input type = "hidden" name = "id" value="<?php echo $id;?>"/>
-					<span> <?php echo $err_name; ?> </span>
-				</div>
-				<div>
-				    <h4>DOB</h4>
-					<input type = "text" name = "dob" value="<?php echo $s["dob"];?>"/>
-					<span> <?php echo $err_dob; ?> </span>
-				</div>
-				<div>
-				    <h4>Credit</h4>
-					<input type = "text" name = "credit" value="<?php echo $s["credit"];?>"/>
-					<span> <?php echo $err_credit; ?> </span>
-				</div>
-				<div>
-				    <h4>CGPA</h4>
-					<input type = "text" name = "cgpa" value="<?php echo $s["cgpa"];?>"/>
-					<span> <?php echo $err_cgpa; ?> </span>
-				</div>
-				<div>
-				    <h4>Dept.</h4>
-					<select name="did">
-				            <option selected><?php echo $s["dept_id"];?></option>
-				                <?php
-					                foreach($depts as $d){
-						                echo "<option value='".$d["id"]."'>".$d["name"]."</option>";
-					                }
-				                ?>
-			            </select>
-						<span> <?php echo $err_did; ?> </span>
-					<span> <?php echo $err_did; ?> </span>
-				</div>
-				<div>
-					<input type = "submit" name = "updateStudent" value = "Update"/>
-				</div>
-			</form>
+<div class="center">
+	<h5 class="text-danger"><?php echo $err_db;?></h5>
+	<form action="" method="post" class="form-horizontal form-material">
+		<div class="form-group">
+			<h4 class="text">Name:</h4> 
+			<input type="text" name="name" value="<?php echo $c["name"];?>" class="form-control">
+			<h4 class="text">DOB:</h4> 
+			<input type="text" name="dob" value="<?php echo $c["dob"];?>" class="form-control">
+			<h4 class="text">Credit:</h4> 
+			<input type="text" name="credit" value="<?php echo $c["credit"];?>" class="form-control">
+			<h4 class="text">CGPA:</h4> 
+			<input type="text" name="cgpa" value="<?php echo $c["cgpa"];?>" class="form-control">
+			<h4 class="text">Dept_ID:</h4> 
+			<input type="text" name="dept_id" value="<?php echo $c["dept_id"];?>" class="form-control">
 		</div>
-	</boady>
-    <?php include 'Footer.php'; ?>
-</html>
+		
+		<div class="form-group text-center">
+			
+			<input type="submit" class="btn btn-success" name="edit_category" value="Edit Category" class="form-control">
+		</div>
+	</form>
+</div>

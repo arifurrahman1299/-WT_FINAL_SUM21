@@ -1,10 +1,16 @@
-<?php include 'MainHeader.php'; ?>
-<?php include 'AdminHeader.php'; ?>
 <html>
-    <head></head>
-	<boady>
-	    <div align="center">
-		    <h3>Dashboard</h3>
-	</boady>
-    <?php include 'Footer.php'; ?>
+	<head>
+	<title>Dash</title>
+	<head>
+	
+	<body>
+		<div align="center">
+			<div align="center">
+				<h4><a href="Allstudents.php">All Students</a></h4>
+			</div>
+			<div align="center">
+				<h4><a href="AddStudent.php">Add Students</a></h4>
+			</div>
+		</div>
+	</body>
 </html>

@@ -1,47 +1,40 @@
-<?php include 'MainHeader.php'; ?>
-<?php include 'AdminHeader.php'; ?>
-<?php include '../Controllers/StudentControll.php'; ?>
-<?php $students = getStudents(); ?>
-<html>
-    <head></head>
-	<boady>
-	    <div align="center">
-		    <h3>All Students</h3>
-			<h5><?php echo $err_db; ?></h5>
-			<table>
-			    <thead>
-				    <th>SL#</th>
-					<th>Name</th>
-					<th>ID</th>
-					<th>DOB</th>
-					<th>Credit</th>
-					<th>CGPA</th>
-					<th>Dept.</th>
-					<th></th>
-					<th></th>
-					
-				</thead>
-				<tboady>
-				    <?php
-                        $i = 1;
-						foreach($students as $s){
-							echo "<tr>";
-							    echo "<td>$i</td>";
-								echo "<td>".$s["name"]."</td>";
-								echo "<td>".$s["id"]."</td>";
-								echo "<td>".$s["dob"]."</td>";
-								echo "<td>".$s["credit"]."</td>";
-								echo "<td>".$s["cgpa"]."</td>";
-								echo "<td>".$s["d_name"]."</td>";
-								echo '<td><a href = "EditStudent.php?id='.$s["id"].'">Edit</td>';
-								echo '<td><a href = "DeleteStudent.php?id='.$s["id"].'">Delete</td>';
-							echo "</tr>";
-							$i++;
-						}
-					?>
-				</tboady>
-			</table>
-		</div>
-	</boady>
-    <?php include 'Footer.php'; ?>
-</html>
+<?php include 'Controllers/CategoryController.php';
+	
+	$categories = getAllCategories();
+?>
+
+<div class="center">
+	<a href="Dashboard.php">Dashboard</a></h3>
+	<h3 class="text">All Students</h3>
+	<table class="table table-striped">
+		<thead>
+			<th>ID#</th>
+			<th>Name</th>
+			<th>Dob </th>
+			<th>Credit</th>
+			<th>CGPA</th>
+			<th>Dept_ID</th>
+			
+		</thead>
+		<tbody>
+			<?php
+				$i=1;
+				foreach($categories as $c){
+					echo "<tr>";
+						echo "<td>$i</td>";
+						echo "<td>".$c["name"]."</td>";
+						echo "<td>".$c["dob"]."</td>";
+						echo "<td>".$c["credit"]."</td>";
+						echo "<td>".$c["cgpa"]."</td>";
+						echo "<td>".$c["dept_id"]."</td>";
+						echo '<td><a href="Editstudent.php?id='.$c["id"].'" class="btn btn-success">Edit</a></td>';
+						echo '<td><a href="Deletestudent.php?id='.$c['id'].'">Delete</a></td>';
+					echo "</tr>";
+					$i++;
+				}
+			?>
+			
+			
+		</tbody>
+	</table>
+</div>
